@@ -20,8 +20,10 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.2.0'
     compile 'com.android.support:design:23.2.0'
+    compile files('lib/AMap_Location_V2.4.0_20160308.jar')
+    compile files('lib/AMap_2DMap_V2.8.1_20160202.jar')
 }
