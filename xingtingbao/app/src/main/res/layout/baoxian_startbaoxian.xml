@@ -1,20 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="1">
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="16dp"
-        android:text="这是‘开始报险’后应该显示的界面"
-        android:id="@+id/textView2" />
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="是否有人员伤亡："
+        android:textSize="9pt"
+        />
+    <RadioGroup android:id="@+id/typeGroup" android:contentDescription="类型" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/firstcourse" android:text="是" android:checked="true"></RadioButton>
+        <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/secondcourse" android:text="否"></RadioButton>
+    </RadioGroup>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="查看地图"
-        android:id="@+id/btnStartBasicmap"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp" />
-</RelativeLayout>
+        android:text="上传照片"
+        android:id="@+id/camera" />
+
+    <ImageView
+        android:layout_width="13dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/photo"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.03" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="确认"
+        android:id="@+id/btnStartBasicmap" />
+
+
+</LinearLayout>
