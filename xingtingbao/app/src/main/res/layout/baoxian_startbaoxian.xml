@@ -22,8 +22,8 @@
         android:id="@+id/camera" />
 
     <ImageView
-        android:layout_width="13dp"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="260dp"
         android:id="@+id/photo"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.03" />

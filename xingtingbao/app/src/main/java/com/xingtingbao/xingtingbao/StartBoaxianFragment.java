@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -28,6 +29,7 @@ public class StartBoaxianFragment extends Fragment {
     private View root;
     private Button button;
     private Intent camera;
+    private ImageView Photo;
 
     @Nullable
     @Override
@@ -48,6 +50,7 @@ public class StartBoaxianFragment extends Fragment {
                 startActivity(new Intent("android.intent.action.Basic2dmap"));
             }
         });
+        Photo = (ImageView) root.findViewById(R.id.photo);
         return root;
     }
     @Override
@@ -67,10 +70,11 @@ public class StartBoaxianFragment extends Fragment {
 
             Bundle bundle = data.getExtras();
             Bitmap bitmap = (Bitmap) bundle.get("data");// 获取相机返回的数据，并转换为Bitmap图片格式
+            Photo.setImageBitmap(bitmap);
             FileOutputStream b = null;
-  //          File file = new File("/sdcard/myImage/");
-            File file = root.getContext().getFilesDir();
-//            file.mkdirs();// 创建文件夹，名称为myimage
+            File file = new File("/sdcard/myImage/");
+   //         File file = root.getContext().getFilesDir();
+            file.mkdirs();// 创建文件夹，名称为myimage
 
             //照片的命名，目标文件夹下，以当前时间数字串为名称，即可确保每张照片名称不相同。网上流传的其他Demo这里的照片名称都写死了，则会发生无论拍照多少张，后一张总会把前一张照片覆盖。细心的同学还可以设置这个字符串，比如加上“ＩＭＧ”字样等；
 
